@@ -350,8 +350,8 @@ func (ls *LocationSyncer) saveLocToDB(locParams *LocParams) error {
 	var row3 bytes.Buffer
 	now := Time2StrF(time.Now(), "2006-01-02 15:04:05")
 	header.WriteString("(UPDATE_TIME_,TOTAL_AREA_,TOTAL_SITE_,TOTAL_LOC_,TOTAL_VEHICLE_,INWELL_VEHICLE_,LEAVE_,AREA_1_,AREA_2_,AREA_3_,AREA_4_")
-	row1.WriteString("('" + now + "','" + strconv.Itoa(len(ls.workAreas)) + "','" + strconv.Itoa(len(ls.workSites)) + "','" + strconv.Itoa(locParams.inwellPersonCount) + "','" + strconv.Itoa(locParams.inwellPersonCount) + "','" + strconv.Itoa(locParams.vehicleCount) + "','" + strconv.Itoa(locParams.inwellVehicleCount) + "','" + strconv.Itoa(locParams.area1Count) + "','" + strconv.Itoa(locParams.area2Count) + "','" + strconv.Itoa(locParams.area3Count) + "','" + strconv.Itoa(locParams.area4Count) + "'")
-	row2.WriteString("('" + now + "','','',''")
+	row1.WriteString("('" + now + "','" + strconv.Itoa(len(ls.workAreas)) + "','" + strconv.Itoa(len(ls.workSites)) + "','" + strconv.Itoa(locParams.inwellPersonCount) + "','" + strconv.Itoa(locParams.vehicleCount) + "','" + strconv.Itoa(locParams.inwellVehicleCount) + "','" + strconv.Itoa(locParams.leavePersonCount) + "','" + strconv.Itoa(locParams.area1Count) + "','" + strconv.Itoa(locParams.area2Count) + "','" + strconv.Itoa(locParams.area3Count) + "','" + strconv.Itoa(locParams.area4Count) + "'")
+	row2.WriteString("('" + now + "','','','','','','','','','',''")
 	row3.WriteString("('" + now + "','区域总数','基站总数','井下人员数','车辆总数','井下车辆数','离网人数','区域类型1人数','区域类型2人数','区域类型3人数','区域类型4人数'")
 	for i, area := range areas {
 		header.WriteString(",COL_" + strconv.Itoa(i+1) + "_")
