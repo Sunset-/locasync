@@ -1,0 +1,16 @@
+#人员定位接口地址
+address: https://25f4bc24-5b6f-4b86-9847-634691d6d215.mock.pstmn.io
+#查询周期，单位秒
+interval: 5
+#数据库区域列个数
+cols: 50
+#数据库部门列个数
+depts: 3
+#有效时间周期，单位秒
+activeTime: 90000
+#离网时间周期，单位秒
+leaveTime: 7200
+#数据库连接信息sqlserver://sa:Sunset1234567@172.16.129.200:1433/instance?database=sunsetnewdb
+dsn: "sqlserver://sa:Sunset1234567@172.16.129.200:1433/instance?database=sunsetnewdb"
+#日志级别
+logLevel: warn
